@@ -3,7 +3,7 @@ clc
 
 syms x y u v zeta eta real;
 
-name = 'parabole';
+name = 'plane';
 manifold.surf = [u; v; u^2 + v^2];
 manifold.symbs = [];
 manifold.nums = [];
