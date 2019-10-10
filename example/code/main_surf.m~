@@ -7,7 +7,7 @@ r = 1;
 q = 1;
 
 name = 'Ricatti';
-manifold.surf = [u; v; (u + sqrt(u^2 + (1/r)*v^2*q))/((1/r)*v^2)];
+manifold.surf = [u; v; u + sqrt];
 manifold.symbs = [];
 manifold.nums = [];
 manifold.symvars = [u, v];
@@ -26,7 +26,7 @@ sol = get_geodesic(tspan, manifold, uv0, uvf);
 span_u = [-2, 2];
 span_v = [-2, 2];
 
-n_plot = 50;
+n_plot = 20;
 u_plot = linspace(span_u(1), span_u(2), n_plot);
 v_plot = linspace(span_v(1), span_v(2), n_plot);
 [U, V] = meshgrid(u_plot, v_plot);
@@ -48,12 +48,12 @@ surf(X, Y, Z);
 shading flat
 hold on; 
 
-% geocurve = zeros(3, length(sol.x));
-% geovars = [u; v; zeta; eta];
-%  
-% for i = 1:length(sol.x)
-%     geocurve(:, i) = subs(manifold.surf, geovars, sol.y(:, i));
-% end
+geocurve = zeros(3, length(sol.x));
+geovars = [u; v; zeta; eta];
+ 
+for i = 1:length(sol.x)
+    geocurve(:, i) = subs(manifold.surf, geovars, sol.y(:, i));
+end
 
 xlabel('a')
 ylabel('b')
