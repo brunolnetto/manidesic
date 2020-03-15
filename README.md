@@ -1,2 +1,2 @@
 # manidesic
-Calculates the geodesic on a n-dimensional manifold. Be patient, it may take some minutes.
+Calculates the geodesic on a 2-dimensional manifold. Be patient, it may take some minutes.
